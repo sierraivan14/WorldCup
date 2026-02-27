@@ -3,7 +3,10 @@ package worldcup;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class WorldCup {
 
@@ -19,6 +22,13 @@ public class WorldCup {
         
     }
     
+    public static void main(String[] args) {
+        WorldCup demo = new WorldCup();
+        VistaDesktop vista = new VistaDesktop(demo);
+        
+        vista.show();
+    }
+    
     class Archivo {
         static String load()throws FileNotFoundException{
             String filename = "src/worldcup/Datos.txt";
@@ -29,5 +39,22 @@ public class WorldCup {
             }else
                 throw new FileNotFoundException("...");
         }
+    }
+    
+    class VistaDesktop{
+        WorldCup datos;
+
+        public VistaDesktop(WorldCup datos) {
+            this.datos = datos;
+        }
+        
+        void show(){
+            JPanel panel = new JPanel();
+            JLabel uno = new JLabel(), dos = new JLabel(), tres = new JLabel();
+            String [] partes = datos.dataSet.split(", ");
+            String primero = partes[3], segundo = partes[4], mundial = partes[0] + "-" + partes[1]+ "," + partes[2];
+            ImageIcon lugar = new ImageIcon("/Users/gokuv/OneDrive/Imágenes/Topicos/" + partes[0] + ".jpg" );
+        }
+            
     }
 }
