@@ -24,7 +24,7 @@ src/
 └── worldcup/
       ├── WorldCup.java
       ├── Datos.txt
-      └── Imagenes/
+      └── Images/
             ├── World Cup 2022.jpeg
             ├── Argentina.png
             └── Francia.png
