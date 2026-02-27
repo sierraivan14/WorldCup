@@ -57,7 +57,7 @@ class VistaDesktop {
         JLabel uno = new JLabel(), dos = new JLabel(), tres = new JLabel();
         String[] partes = datos.dataSet.split(", ");
         String primero = partes[3], segundo = partes[4], mundial = partes[0] + "-" + partes[1] + "," + partes[2];
-        ImageIcon lugar = new ImageIcon("/Users/gokuv/OneDrive/Imágenes/Topicos/" + partes[0] + ".jpeg");
+        ImageIcon lugar = new ImageIcon(getClass().getResource("/worldcup/Images/" + partes[0] + ".jpeg"));
 
         panel.setPreferredSize(new Dimension(700, 445));
         panel.setLayout(null);
@@ -65,10 +65,10 @@ class VistaDesktop {
         uno.setIcon(lugar);
         uno.setBounds(0, 0, 700, 445);
 
-        dos.setIcon(new ImageIcon("/Users/gokuv/OneDrive/Imágenes/Topicos/Argentina.png"));
+        dos.setIcon(new ImageIcon(getClass().getResource("/worldcup/Images/" + partes[3] + ".png")));
         dos.setBounds(10, 50, 200, 290);
         
-        tres.setIcon(new ImageIcon("/Users/gokuv/OneDrive/Imágenes/Topicos/Francia.png"));
+        tres.setIcon(new ImageIcon(getClass().getResource("/worldcup/Images/" + partes[4] + ".png")));
         tres.setBounds(480, 100, 220, 220);
         
         panel.add(tres);
