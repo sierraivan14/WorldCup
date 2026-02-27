@@ -1,6 +1,8 @@
 package worldcup;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class WorldCup {
@@ -16,5 +18,16 @@ public class WorldCup {
         }
         
     }
-
+    
+    class Archivo {
+        static String load()throws FileNotFoundException{
+            String filename = "src/worldcup/Datos.txt";
+            if (new File(filename).exists()) {
+                Scanner sc;
+                sc = new Scanner(new File(filename));
+                return sc.nextLine();
+            }else
+                throw new FileNotFoundException("...");
+        }
+    }
 }
